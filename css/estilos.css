@@ -1,0 +1,17 @@
+/*orden correcto de hoja de estilos*/
+/*etiquetas  orden alfabético*/
+/*identificadores*/
+/*clases*/
+/*pseudoelementos*/
+
+body 
+{
+	/*atributos:valor;*/
+	background: rgb(255,255,255);
+	/*background: red; /*fondo*/
+	color: #000000;
+	/*color: white; /*letra*/
+	/*color: hotpink;*/
+	max-width: 1024px; /*ancho maximo*/
+	margin: 0 auto; 
+}
