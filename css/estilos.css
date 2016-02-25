@@ -7,11 +7,41 @@
 body 
 {
 	/*atributos:valor;*/
-	background: rgb(255,255,255);
+	background: rgb(255,255,255); /*fondo*/
 	/*background: red; /*fondo*/
-	color: #000000;
+	color: #000000; /*letra*/
 	/*color: white; /*letra*/
 	/*color: hotpink;*/
 	max-width: 1024px; /*ancho maximo*/
-	margin: 0 auto; 
+	margin: 0 auto; /*Primer parametro alineacion vertical, segundo parametro alineacion horizontal*/
+}
+
+header
+{
+	background: blue; /*fondo*/
+	border: 1px solid black; /*alrededor*/
+	border-radius: 5px;	/*esquinas*/
+	color: white; /*letra*/
+}
+
+header h1
+{
+	text-align: center;
+}
+
+header nav ul li 
+{
+	background: white;
+	border-radius: 5px;
+	/*border: 1px solid yellow;*/
+	color: black;
+	display: inline-block; /*rompe caja*/
+	margin: 0px 50px 0px 50px;
+	padding: 10px;
+}
+
+header nav ul li:hover /*cuando al li le pones el mouse encima*/
+{
+	background: black;
+	color: white;
 }
