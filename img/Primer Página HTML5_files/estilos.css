@@ -58,17 +58,3 @@ header nav ul li:hover /*cuando al li le pones el mouse encima*/
 	color: white;
 }
 
-/*Aqui van los Id's*/
-
-#seccion1 
-{
-	border: 10px solid red;
-}
-
-#seccion1 article
-{
-	border: 10px solid black;
-	display: inline-block;
-	vertical-align: top;
-	width: 47.8%;
-}
