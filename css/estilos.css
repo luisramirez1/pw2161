@@ -27,8 +27,10 @@ header
 
 header h1
 {
+	color: yellow;
 	text-shadow: 5px 5px 10px black;
 	text-align: center;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 header img
@@ -47,6 +49,7 @@ header nav ul li
 	/*border: 1px solid yellow;*/
 	color: black;
 	display: inline-block; /*rompe caja*/
+	font-family: 'Permanent Marker', cursive;
 	margin: 0px 30px 0px 30px;
 	padding: 10px;
 
@@ -63,12 +66,14 @@ header nav ul li:hover /*cuando al li le pones el mouse encima*/
 #seccion1 
 {
 	border: 10px solid red;
+	font-family: 'Gloria Hallelujah', cursive;
 }
 
 #seccion1 article
 {
 	border: 10px solid black;
 	display: inline-block;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
 	vertical-align: top;
-	width: 47.8%;
+	width: 47.65%;
 }
