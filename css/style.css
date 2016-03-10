@@ -63,4 +63,7 @@
 .icon-apple:before {
     content: "\e90a";
 }
+.icon-flickr:before {
+    content: "\e903";
+}
 
