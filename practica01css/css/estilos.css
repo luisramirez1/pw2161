@@ -82,9 +82,15 @@ header nav ul li
 
 .boton1
 {
-	background: white;
-	color: blue;
+	display: block;
 	text-align: center;
+}
+
+.boton1 input
+{
+	background: white;
+	border-radius: 3px;
+	color: blue;
 }
 
 .otraSeccion, .unaSeccion
