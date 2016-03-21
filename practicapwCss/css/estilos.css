@@ -1,0 +1,206 @@
+body
+{
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px; /*el diseñador lo quizo*/
+}
+
+header nav
+{
+	background: #DD4812;
+	border-radius: 10px;
+	margin: 0 auto;
+	margin-top: 30px;
+	width: 98%;
+}
+
+header nav ul li
+{
+	color: white;
+	display: inline-block;
+	font-size: 1em;
+	margin-right: 20px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+#cuartaSeccion
+{
+	border: 1px solid #C4C6C3;
+	border-radius: 10px;
+	width: 30.5%;
+	margin-left: 672px;
+	margin-top: -110px;
+}
+
+#cuartaSeccion article ul li
+{
+	border-bottom-style: dotted; border-bottom-width: 1px;
+	color: #707070;
+	font-weight: bold;
+	margin-left: -10px;
+	width: 90%;
+}
+
+#logo
+{
+	margin-top: 15px;
+	margin-left: 10px;
+	width: 20%;
+}
+
+#lorem	
+{
+	margin-left: 8px;
+	margin-top: 6px;
+}
+
+#primerSeccion article
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#red
+{
+	margin-right: 30px;
+}
+
+#redi
+{
+
+	margin-top: -20px;
+	margin-right: 10px;
+	float: right;
+}
+
+#secc01art01
+{
+	margin-left: 35px;
+	width: 60%;
+}
+
+#secc01art02
+{
+	border-bottom: 1px solid #C4C6C3;
+	border-left: 1px solid #C4C6C3;
+	border-right: 1px solid #C4C6C3;
+	border-radius: 9px;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 20px;	
+	width: 30.5%;
+	padding-bottom: 8px;
+}
+
+#terceraSeccion article
+{
+	display: inline-block;
+	vertical-align: top;
+}
+
+#secc03art01 img
+{
+	border: 8px solid #C4C6C3;
+	margin-top: 8px;
+	margin-left: 40px;
+	
+}
+
+#secc03art02
+{
+	width: 42%;
+}
+
+#secc03art02 input
+{
+	background: #C4C6C3;
+	border-radius: 9px;
+	color: white;
+	font-style: italic;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-left: 8px;
+	margin-top: 10px;
+
+}
+	
+#secc03art02 nav
+{
+	background: #F0F0F0;
+	border-radius: 9px;
+	margin-left: 8px;
+	margin-top: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+
+}
+
+#secc03art03
+{
+	border-bottom: 1px solid #C4C6C3;
+	border-left: 1px solid #C4C6C3;
+	border-radius: 9px;
+	border-right: 1px solid #C4C6C3;
+	margin-top: -13px;
+	margin-left: 15px;
+	width: 30.5%;
+	padding-bottom: 8px;
+}
+
+#secc03art03 input
+{
+	border-radius: 50px;
+	margin-top: 15px;
+	margin-left: 30px;
+}
+
+#search
+{
+	
+}
+
+#segundaSeccion
+{
+	color: #888888;
+	font-size: 2em;
+	font-weight: bold;
+	margin-left: 35px;
+}
+
+.thema
+{
+	background: white;
+	color: white;
+	text-shadow: 0 0 3px black, 0 0 5px white;
+	margin-left: 30px;
+	font-size: 1em;
+	font-weight: bold, 1px;
+	
+}
+
+.publicidad
+{
+	color: white;
+	background: #DD4812;
+	border-radius: 10px;
+	font-size: 1em;
+	font-weight: bold;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+
+}
+
+.span1
+{
+	margin-left: 15px;
+}
+
+.subcol
+{
+	color: #777777;
+	font-style:italic;
+	font-weight: ;
+}
+
