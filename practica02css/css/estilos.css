@@ -1,6 +1,5 @@
 body
 {
-	border: 1px solid red; 
 	font-size: 16px;
 	margin: 0 auto;
 	max-width: 1078px; /*el diseñador lo quizo*/
@@ -25,16 +24,28 @@ header nav ul li
 	display: inline-block;
 	font-size: 1.8em;
 	margin-right: 15px;
-	list-style: square;
 }
 
 #bgoffer
 {
 	/*left,top,bottom,right*/
-	left: 20%;
+	left: 8%;
 	position: absolute;
 	top: 150px;	
+}
 
+#cuartaSeccion
+{
+	background: #516EAC;
+	color: white;
+	height: 125px;
+}
+
+#cuartaSeccion article
+{
+	display: inline-block;
+	margin-left: 30px;
+	vertical-align: top;
 }
 
 #paint
@@ -61,14 +72,74 @@ header nav ul li
 	margin-left: 25px;
 }
 
+#iface
+{
+	left: 74.5%;
+	bottom: -300.5px;
+	position: absolute;
+}
+
+#itwit
+{
+	left: 78.5%;
+	bottom: -300.5px;
+	position: absolute;
+}
+
+#iright
+{
+	margin-top: 0px;
+	margin-left: 170px;
+}
+
 #secc01art01
 {
-	width: 60%;
+	width: 70%;
 }
 
 #secc01art02
 {
-	width: 30%;
+	width: 20%;
+}
+
+#secc01art01 img
+{
+	width: 100%;
+}
+
+#secc04art01
+{
+	font-size: 12px;
+	line-height: 27px;
+	margin-top: 35px;
+	width: 35%;
+}
+
+#secc04art02
+{
+	font-size: 12px;
+	line-height: 27px;
+	text-align: center;
+	margin-top: 64px;
+	width: 35%;
+}
+
+#secc04art03
+{
+	
+	margin-top: 85px;
+	
+	width: 20%;
+}
+
+#secc04art03 span
+{
+	border: 1px solid white;
+	border-radius: 50px;
+	font-size: 12px;
+	margin-left: 105px;
+	padding: 4px 8px 4px 8px;
+	
 }
 
 #segundaSeccion
@@ -76,9 +147,97 @@ header nav ul li
 	text-align: right;
 }
 
+#stay
+{
+	margin-top: 47px;
+}
+
+#stay input[type="button"]
+{
+	background: #A3D948;
+	border-radius: 3px;
+	color: white;
+	margin-left: 3px;
+	padding: 4px 10px 4px 10px;
+}
+
+#stay input[type="search"]
+{
+	border-radius: 3px;
+	margin-top: 9px;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	width: 63%;
+}
+
+#terceraSeccion article
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 20px;
+	width: 22.5%;
+}
+
 #terceraSeccion article img
 {
 	vertical-align: middle;
+}
+
+.colorazul
+{
+	color: #1AA0D6;
+}
+
+.colorazuln
+{
+	color: #1AA0D6;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.colorrosa
+{
+	color: #D54286;
+	font-weight: bold;
+}
+
+.colorrosan
+{
+	color: #D54286;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.colorrosas
+{
+	color: #D54286;
+	font-size: 1.8em;
+}
+
+.colorverde
+{
+	color: #A3D948;
+	font-size: 1.4em;
+	font-weight: bold;	
+}
+
+.fs
+{	
+	color: #516EAC;
+	font-size: 1.5em;
+	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.lista
+{
+	margin-left: -15px;
+}
+
+.lista li
+{
+	margin-bottom: 6px;
 }
 
 .numerotelefono
@@ -86,12 +245,12 @@ header nav ul li
 	color: #D54286;
 	font-size: 2.5em;
 	font-weight: bold;
-
+	margin-right: 30px
 }
+
 .wecanoffer
 {
 	color: #D54286;
 	font-size: 3.5em;
 	font-weight: bold;
 }
-
