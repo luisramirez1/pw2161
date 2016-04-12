@@ -1,0 +1,171 @@
+body
+{
+
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
+	border: 1px solid red;
+}
+
+head 
+{
+	display: inline-block;
+	margin-top: 35px;
+	vertical-align: top;
+}
+
+
+#nav
+{
+	margin-left: 200px;
+	margin-top: -50px;
+
+}
+#nav ul li
+{
+	display: inline-block;
+	margin-left: 30px;
+	vertical-align: top;
+}
+
+#seccion1 article
+{
+	display: inline-block;
+	margin-left: 25px;
+	margin-top: 50px;
+	vertical-align: top;
+}
+
+#secc1art1
+{
+ width: 35%;
+}
+#secc1art1 img
+{
+	width: 320px;
+	border-radius: 150px;
+
+}
+
+#secc1art2
+{
+	
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+	
+}
+#secc1art2 span
+{
+	margin-left: 35px;
+	width: 20px;
+}
+
+#secc1art3
+{
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 100px;
+}
+#secc1art3 span
+{
+	display: inline-block;
+	margin-left: 400px;
+	vertical-align: top;
+	width: 45%;	
+}
+#seccion2 article 
+{
+	display: inline-block;
+	vertical-align: top;
+
+}
+#secc2art2
+{
+	display: inline-block;
+	margin-left: 700px;
+	margin-top: -130px;
+	vertical-align: top;
+}
+#secc2art2 img
+{
+	margin-left: 15px;
+	width: 10%;
+}
+.bonpuf
+{
+	margin-left: 35px;
+	width: 10%;
+}
+
+.copy
+{
+	margin-left: -390px;
+	width: 20%;
+}
+.lirosa
+{
+	color: pink;
+}
+.textput
+{
+	color: #627B7A;
+	display: inline-block;
+	margin-left: 400px;
+	margin-top: 35px;
+	vertical-align: top;
+}
+.service
+{
+	background: #F6C84F;
+	border: 1px solid #F6C84F;
+	border-radius: 100%;
+	color:white;
+	padding: 50px;
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+
+}
+
+.flavor
+{
+	background: #627B7A;
+	border: 1px solid #627B7A;
+	border-radius: 100%;
+	color: white;
+	padding: 50px;
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+}
+.eye
+{
+	background: #F5A19C;
+	border: 1px solid #F5A19C;
+	border-radius: 100%;
+	color: white;
+	padding: 50px 60px;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.cotton
+{
+	display: inline-block;
+	color: pink;
+	margin-left: 70px;
+	margin-top: -90px;
+	vertical-align: top;
+}
+.textB
+{
+	margin-top: -175px;
+
+}
+.textW
+{
+	margin-top: -175px;
+	font-size: 1em;
+}
