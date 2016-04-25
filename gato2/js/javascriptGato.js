@@ -1,12 +1,13 @@
-//Variables globales
-var turno 			= false;
-var letraCasilla 	="";
-var cuentaJuego		=0;
-var cuentaJugadas	=0;
+//Variables Globales
+//PLDC = Se usan en todo el código.
+var turno         = false;
+var letraCasilla  = "";
+var cuentaJuego   = 0;
+var cuentaJugadas = 0;
 
 function iniciaGato()
 {
-	//En construccion 
+ //En construcción ¬¬
 }
 
 function validaJugada(letra)
@@ -21,56 +22,52 @@ function validaJugada(letra)
 	var b31 = document.getElementById("tresuno").innerHTML;
 	var b32 = document.getElementById("tresdos").innerHTML;
 	var b33 = document.getElementById("trestres").innerHTML;
-
 	//Jugadas
 	//Renglones
 	if(b11==b12 && b12==b13 && b11!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	if(b21==b22 && b22==b23 && b21!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	if(b31==b32 && b32==b33 && b31!="&nbsp;")
-		ganardor = true;
-	//Columnas
+		ganador = true;	
+	//Columnas	
 	if(b11==b21 && b21==b31 && b11!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	if(b12==b22 && b22==b32 && b12!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	if(b13==b23 && b23==b33 && b13!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	//Diagonales
 	if(b11==b22 && b22==b33 && b11!="&nbsp;")
-		ganardor = true;
+		ganador = true;
 	if(b13==b22 && b22==b31 && b13!="&nbsp;")
-		ganardor = true;
-	//Ganador
+		ganador = true;	
+	//¿Alguien ganó?
 	if(ganador == true) //if(ganador)
 	{
-		alert("!Ganador "+letra+"!");
+		alert("¡Ganador "+letra+"!");
 	}
 	else if(ganador == false && cuentaJugadas == 9)
 	{
-		alert("!Empate!")
+		alert("¡Empate!")
 	}
-
 }
 
 function escribe(casilla)
 {
-	var letra="";
+	var letra = "";
 	letraCasilla = document.getElementById(casilla).innerHTML;
-
 	//if(letraCasilla == "&nbsp;")
-	if(letraCasilla != "X" && letraCasilla !="O")
+	if(letraCasilla!="X" && letraCasilla!="O")
 	{
-		if(turno == false) //if(!turno)
+		if(turno == false) // if(!turno)
 			letra = "X";
 		else
-			letra ="O";
+			letra = "O";
 		document.getElementById(casilla).innerHTML = letra;
-		turno = !turno; //turno = true;
+		turno = !turno; // turno = true;
 	}
 	cuentaJugadas = cuentaJugadas + 1;
-
-	//Para saber quien gano, validamos la jugada
-	validaJugada(letra);
+	//Para saber quien ganó, validamos la jugada
+	validaJugada(letra); 
 }
