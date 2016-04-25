@@ -1,27 +1,49 @@
+<!-- innerhtml -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Gato</title>
+	<title>Juego del gato</title>
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower|Shadows+Into+Light' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/gato.js"></script>
 </head>
-<body>
-	<table>
+<body background="img/pizarra.png">
+	<h2>Hoy es Jueves 21 de Abril del año 2016 </h2>
+	<h1>JUEGO DEL GATO</h1>
+		
+	<table id="tabla">
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td id="11" onclick="clic(this.id);" class="celdas"></td>
+			<td id="12"  onclick="clic(this.id);" class="celdas"></td>
+			<td id="13"  onclick="clic(this.id);" class="columna3 celdas"></td>
 		</tr>
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td id="21"  onclick="clic(this.id);" class="celdas"></td>
+			<td id="22"  onclick="clic(this.id);" class="celdas"></td>
+			<td id="23"  onclick="clic(this.id);" class="columna3 celdas"></td>
 		</tr>
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
+		<tr >
+			<td id="31" onclick="clic(this.id);" class="renglon3 celdas"></td>
+			<td id="32" onclick="clic(this.id);" class="renglon3 celdas"></td>
+			<td id="33" onclick="clic(this.id);" class="renglon3 columna3 celdas"></td>
 		</tr>
 	</table>
+	
+	<section id="juga">
+		<article id="jugadorX">
+			<script type="text/javascript" id="jdX">
+		  		document.write('Jugador X: '+nombreX());
+		    </script> 
+		</article>
+		<article id="jugadorO">
+			<script type="text/javascript" id="jdO">
+		  		document.write('Jugador O: '+nombreO());
+		    </script> 
+		</article>
+	</section>
 </body>
 </html>
+
+
