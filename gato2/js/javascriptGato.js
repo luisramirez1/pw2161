@@ -7,7 +7,25 @@ var cuentaJugadas = 0;
 
 function iniciaGato()
 {
- //En construcción ¬¬
+	//Eliminar la variable de localStorage
+	//localStorage.removeItem("webCuentaJuego");
+	//Preguntar si el navegador es compatible con localStorage.
+	if(typeof(Storage) != "undefined")
+	{
+		if(localStorage.webCuentaJuego)
+		{
+			cuentaJuego = parseInt(localStorage.webCuentaJuego);
+			cuentaJuego = cuentaJuego + 1;
+		}
+		else
+		{
+			cuentaJuego = 1;
+		}
+		document.getElementById("tituloJuego").innerHTML = 
+		"Juego del Gato (#"+cuentaJuego+")";
+	}
+	else
+		alert("¡Utiliza un navegador actualizado!");
 }
 
 function validaJugada(letra)
@@ -46,10 +64,12 @@ function validaJugada(letra)
 	if(ganador == true) //if(ganador)
 	{
 		alert("¡Ganador "+letra+"!");
+		localStorage.webCuentaJuego = cuentaJuego;
 	}
 	else if(ganador == false && cuentaJugadas == 9)
 	{
-		alert("¡Empate!")
+		alert("¡Empate!");
+		localStorage.webCuentaJuego = cuentaJuego;
 	}
 }
 
@@ -71,3 +91,4 @@ function escribe(casilla)
 	//Para saber quien ganó, validamos la jugada
 	validaJugada(letra); 
 }
+
