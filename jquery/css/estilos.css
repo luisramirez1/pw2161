@@ -1,0 +1,45 @@
+body
+{
+	background: #566573;
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
+	text-align: center;
+}
+
+body article
+{
+	background: #212F3D;
+	padding: 70px;
+}
+
+body article img
+{
+	border: 2px solid white;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	width: 30%;
+}
+
+div
+{
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+
+}
+
+h2
+{
+	color: gray;
+	font-size: 4em;
+	font-weight: bold;
+}
+
+#miBoton
+{
+	color: 
+	margin-top: 20px;
+
+}
+
