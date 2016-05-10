@@ -57,6 +57,7 @@ var inicio = function ()
 		});
 	}
 
+	/*
 	var teclaUnInput = function(tecla)
 	{
 		if(tecla.which == 13)
@@ -70,7 +71,7 @@ var inicio = function ()
 	$("#miBoton").off("click",clicBoton);
 	$("#miBoton").on("click",clicBoton2);
 	$("#unInput").on("keypress",teclaUnInput);
-
+	*/
 }
 
 //Main

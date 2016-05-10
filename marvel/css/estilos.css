@@ -1,0 +1,87 @@
+body 
+{
+	background: #111111;
+	font-size: 16px;
+	margin: 0 auto;
+	max-width: 1024px;
+	text-align: center;
+}
+
+button
+{
+	background: #A40000;
+	border: 1px solid #A40000;
+	border-radius: 5px;
+	color: white;
+}
+
+h2
+{
+	color: white;
+	font-size: 3em;
+	font-weight: bold;
+}
+
+input 
+{
+	background: #A40000;
+	border: 1px solid #A40000;
+	border-radius: 5px;
+	color: white;
+	font-size: 1.3em;
+
+}
+
+img
+{
+	border-radius: 100px;
+	width: 60%;
+}
+
+table 
+{
+	background: #A40000;
+	border-collapse: collapse;
+	margin: 0 auto;
+	margin-top: 50px;
+	text-align: center;
+	width: 100%;
+}
+
+table td 
+{
+	border: 2px solid #5C0000;
+	width: 100px;
+	padding: 10px;
+}
+
+#comic
+{
+	color: white;
+	width: 20%;
+}
+
+#descripcion 
+{
+	color: white;
+	width: 20%;
+}
+
+#encabezado
+{
+	color: #000000;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#nombre
+{
+	color: white;
+	font-size: 1.5em;
+	width: 20%;
+}
+
+#miBoton
+{
+	margin-top: 5px;
+}
