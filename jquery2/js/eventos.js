@@ -1,7 +1,8 @@
 var iniciaApp = function()
 {
-	var validarEntrada = function()
+	var validarEntrada=function()
 	{
+		event.preventDefault(); //Invalida los eventos que no corresponden a esta funcion
 		var usuario = $("#txtUsuario").val();
 		var clave = $("#txtClave").val();
 		//validaciones
@@ -17,6 +18,13 @@ var iniciaApp = function()
 			$("#txtClave").focus();
 		}
 
+		//2.- Verificar usuraio y contraseña
+		if(usuario=="pw" && clave=="1234"){
+			//alert("Bienvenido " + usuario);
+			//Dar entrada al usuario
+			$("#datosUsuario").hide();//Esconder
+			$("nav").show("slow");
+		}
 		console.log("Se disparó el submit");
 	}
 

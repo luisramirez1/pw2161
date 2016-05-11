@@ -17,6 +17,16 @@ header nav ul li
 	vertical-align: top;
 }
 
+header nav ul li button
+{
+	width: 89px;
+}
+
+h1
+{
+	text-align: center;
+}
+
 #datosUsuario
 {
 	margin: 0 auto;
