@@ -21,7 +21,8 @@ var iniciaApp = function()
 		//2.- Verificar usuraio y contraseña
 		var parametros="accion=validaEntrada"+
 						"&usuario="+usuario+
-						"&clave="+clave 
+						"&clave="+clave+
+						"&id="+Math.random();
 		$.ajax({
 			beforeSend:function(){
 				console.log("Validar al usuario");
@@ -32,7 +33,15 @@ var iniciaApp = function()
 			url:"php/funciones.php",
 			data:parametros,
 			succes: function(response){
-
+				if(response.respuesta == true)
+				{
+					$("#datosUsuario").hide();
+					$("nav").show("slow");
+				}
+				else
+				{
+					alert("Usuario/Contraseña incorrecto(s)");
+				}
 			},
 			error: function(xhr,ajaxOptions,thrownError){
 				console.log("Algo salio mal");
