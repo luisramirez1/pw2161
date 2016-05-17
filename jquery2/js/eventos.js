@@ -1,56 +1,58 @@
-var iniciaApp = function()
-{
-	var validarEntrada=function()
-	{
-		event.preventDefault(); //Invalida los eventos que no corresponden a esta funcion
-		var usuario = $("#txtUsuario").val();
-		var clave = $("#txtClave").val();
-		//validaciones
-		//1.- Que no sean vacios
-		if(usuario  == "")
-		{
-			alert("El usuario no debe ser vacio");
+
+var iniciaApp = function(){
+	var validarEntrada = function(){
+		//Invalida los eventos que no corresponden a esta función.
+		event.preventDefault();
+		var usuario = $("#txtUsuario").val();
+		var clave = $("#txtClave").val();
+		//Validaciones
+		//1.- Que no sean vacíos:
+		if(usuario == ""){
+			alert("El usuario no debe ser vacío");
 			$("#txtUsuario").focus();
 		}
-		if(clave  == "")
-		{
-			alert("La clave no debe ser vacio");
+		if(clave == ""){
+			alert("La contraseña no debe ser vacío");
 			$("#txtClave").focus();
 		}
-
-		//2.- Verificar usuraio y contraseña
-		var parametros="accion=validaEntrada"+
-						"&usuario="+usuario+
-						"&clave="+clave+
-						"&id="+Math.random();
+		//2.- Verificar usuario y contraseña:
+		var parametros = "accion=validaEntrada"+
+						 "&usuario="+usuario+
+						 "&clave="+clave+
+						 "&id="+Math.random();
 		$.ajax({
-			beforeSend:function(){
+			beforeSend: function(){
 				console.log("Validar al usuario");
 			},
-			cache: false, 
+			cache: false,
 			type: "POST",
 			dataType: "json",
-			url:"php/funciones.php",
-			data:parametros,
-			succes: function(response){
-				if(response.respuesta == true)
-				{
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				if (response.respuesta){
 					$("#datosUsuario").hide();
 					$("nav").show("slow");
-				}
-				else
-				{
-					alert("Usuario/Contraseña incorrecto(s)");
+				} else{
+					alert("Usuario/contraseña incorrecto(s)");
 				}
 			},
 			error: function(xhr,ajaxOptions,thrownError){
-				console.log("Algo salio mal");
+				console.log("Algo salió mal");
 			}
 		});
-		console.log("Se disparó el submit");
-	}
 
+		/*if(usuario == "pw" && clave == "1234"){
+			alert("Bienvenido "+usuario);
+			//Dar entrada al usuario:
+			$("#datosUsuario").hide(); //escondemos
+			$("nav").show("slow"); //mostramos
+		} else{
+			alert("Usuario y/o contraseña incorrecta(s)");
+		}*/
+		
+		console.log("Se disparó el Submit");
+	}
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 }
-
 $(document).on("ready",iniciaApp);

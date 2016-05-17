@@ -1,11 +1,9 @@
-<?php  
+<?php 
 //Funciones
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
   $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
-
   $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
-
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
@@ -27,23 +25,21 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   return $theValue;
 }
 
-function validaEntrada()
-{
+function validaEntrada(){
 	$usuario = GetSQLValueString($_POST["usuario"],"text");
-	$clave	 = GetSQLValueString(md5($_POST["clave"]),"text");
+	$clave = GetSQLValueString(md5($_POST["clave"]),"text");
 	$respuesta = false;
-	//Conectar al servidor de BD
-	//Servidor, Usuario, Clave
+	//Conecto al servidor de BD
+	//Servidor, usuario, clave
 	$conexion = mysql_connect("localhost","root","");
-	//Seleccionar Base de datos
+	//Seleccionar la BD
 	mysql_select_db("cursopw");
-	//%d = decimal %s = string
-	$validar = sprintf("select usuario,clave from usuarios where usuario=%s and clave=%s limit 1",$usuario,$clave);
+	$validar = sprintf("select usuario,clave from usuarios where usuario=%s and clave=%s limit 1",$usuario,$clave);
 	$resultado = mysql_query($validar);
 	//Preguntamos si se trajo un registro
 	if(mysql_num_rows($resultado) > 0)
 		$respuesta = true;
-	$salidaJSON = array('respuesta' => $respuesta );
+	$salidaJSON = array('respuesta' => $respuesta);
 	//Devolvemos el resultado al JS
 	print json_encode($salidaJSON);
 }
