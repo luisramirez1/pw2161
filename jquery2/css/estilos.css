@@ -27,9 +27,22 @@ h1
 	text-align: center;
 }
 
+h2
+{
+	margin-top: 50px;
+	text-align: center;
+
+}
 input
 {
 
+}
+
+#altaUsuarios
+{
+	display: none;
+	margin: 0 auto;
+	width: 320px;
 }
 
 #datosUsuario
