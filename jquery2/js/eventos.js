@@ -1,5 +1,6 @@
 
 var iniciaApp = function(){
+	var banderaAlta=true;
 	var validarEntrada = function(){
 		//Invalida los eventos que no corresponden a esta función.
 		event.preventDefault();
@@ -62,6 +63,12 @@ var iniciaApp = function(){
 	var contador = 1;
 		window.onclick = function(){
     		document.getElementById("btnBajas").onclick = function(){
+        		contador++;
+    	}
+	}
+	var contadoraa = 1;
+		window.onclick = function(){
+    		document.getElementById("btnConsultas").onclick = function(){
         		contador++;
     	}
 	}
@@ -182,7 +189,19 @@ var iniciaApp = function(){
 			data: parametros,
 			success: function(response){
 				console.log(response);
+				if(response.respuesta && !banderaAlta )//¬¬
+				{
 				
+					$("#txtNombreUsuario").val(response.nom);		
+					$("#txtClaveUsuario").val(response.cla);
+					$("#txtTipoUsuario").val(response.tipo);
+					$("#txtDepartamento").val(response.depto);
+					$(".elemBaja").show("slow");
+				}
+				else
+				{	
+				
+				}
 			},
 			error: function(xhr,ajx,thrownError){
 
@@ -190,11 +209,47 @@ var iniciaApp = function(){
 		});
 	}
 	
+	var Consultas = function()
+	{
+		if(contadoraa%2==0){
+			$("#consultasUsuarios").hide("slow");
+		}
+		else
+		{
+			if(contadora%2!=0){
+			$("#consultasUsuarios").show("slow");
+			}
+		}
+		var parametros = "accion=consultas"+
+						 "&id="+Math.random();
+		$.ajax({
+			beforeSend: function(){
+				console.log("Consultas usuarios");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				if (response.respuesta == true) 
+				{
+					$("#tablaConsultas").html(response.tabla);
+					//$("#tablaConsultas").append(response.tabla);
+				}
+		    },
+		    error: function(xhr,ajx,thrownError){
+
+			}
+		});
+	}
+
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnAltas").on("click",Altas);
 	$("#frmAltaUsuarios").on("submit",AltaUsuario);
 	$("#btnBajas").on("click",Bajas);
 	$("#frmBajaUsuarios").on("submit",BajaUsuario);
 	$("#txtNombreUsuarioBaja").on("focusout", BuscaUsuario);
+	$("#btnConsultas").on("click",Consultas)
 }
 $(document).on("ready",iniciaApp);

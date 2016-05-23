@@ -113,6 +113,35 @@ function buscaUsuario()
 	//print_r($array);
 }
 
+function consultas()
+{
+	mysql_connect("localhost","root","");
+	mysql_select_db("cursopw");
+	$consulta = "select * from usuarios order by usuario";
+	$resultado = mysql_query($consulta);
+	$tabla = "";
+	if(mysql_num_rows($resultado) > 0)
+	{
+		$respuesta = true;
+		$tabla.= "<tr>";
+		$tabla.= "<th>Usuario</th>";
+		$tabla.= "<th>Tipo Usuario</th>";
+		$tabla.= "<th>Departamento</th>";
+		$tabla.= "</tr>";
+		while($registro = mysql_fetch_array($resultado))
+		{
+			$tabla.="<tr>";
+			$tabla.="<td>".$registro["usuario"]."</td>";
+			$tabla.="<td>".$registro["tipousuario"]."</td>";
+			$tabla.="<td>".$registro["departamento"]."</td>";
+			$tabla.="</tr>";
+		}
+	}
+	$salidaJSON = array('respuesta' => $respuesta, 
+						'tabla'		=> $tabla);
+	print json_encode($salidaJSON);
+}
+
 $accion = $_POST["accion"];
 //Menú principal
 switch ($accion) {
@@ -127,6 +156,9 @@ switch ($accion) {
 		break;
 	case 'buscaUsuario':
 		buscaUsuario();
+		break;
+	case 'consultas':
+		consultas();
 		break;
 	default:
 		# code...
