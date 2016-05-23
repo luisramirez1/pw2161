@@ -100,13 +100,25 @@ function buscaUsuario()
 	mysql_select_db("cursopw");
 	$busca = sprintf("select * from usuarios where usuario=%s limit 1",$usuario);
 	//Ejecutamos la consulta
-	mysql_query($busca);
+	$resultado = mysql_query($busca);
 	//Cuantos registros tenemos afectados
-	if(mysql_affected_rows() > 0)
+	$nombreU = "";
+	$claveU = "";
+	$tipoU = "";
+	$deptoU = "";
+	if(mysql_num_rows($resultado) > 0)
 	{
 		$respuesta = true;
+
+		while($registro = mysql_fetch_array($resultado))
+		{
+			$nombreU.=$registro["usuario"];
+			$claveU.=$registro["clave"];
+			$tipoU.=$registro["tipoUsuario"];
+			$deptoU.=$registro["departamento"];
+		}
 	}
-	$salidaJSON = array('respuesta' => $respuesta);
+	$salidaJSON = array('respuesta' => $respuesta, 'nom'=>$nombreU,'cla'=>$claveU,'tipo'=>$tipoU,'depto'=>$deptoU);
 	print json_encode($salidaJSON);
 	//$json = '[{"usuario":"pw","clave":"81dc9bdb52d04dc20036dbd8313ed055","tipo":"vigente","departamento":"1"}, {"usuario":"luis","clave":"e6ba4060d7bc5a577715be0c5352a6f1","tipo":"vigente","departamento":"1"}, {"usuario":"karina4","clave":"81dc9bdb52d04dc20036dbd8313ed055","tipo":"vigente","departamento":"1"}, {"usuario":"karina5","clave":"81dc9bdb52d04dc20036dbd8313ed055","tipo":"vigente","departamento":"1"}, {"usuario":"karina6","clave":"81dc9bdb52d04dc20036dbd8313ed055","tipo":"vigente","departamento":"1"}, {"usuario":"karina7","clave":"81dc9bdb52d04dc20036dbd8313ed055","tipo":"vigente","departamento":"1"}]';
 	//$array = json_decode($json);
@@ -123,17 +135,17 @@ function consultas()
 	if(mysql_num_rows($resultado) > 0)
 	{
 		$respuesta = true;
-		$tabla.= "<tr>";
-		$tabla.= "<th>Usuario</th>";
-		$tabla.= "<th>Tipo Usuario</th>";
-		$tabla.= "<th>Departamento</th>";
+		$tabla.= "<tr id='tabla2'>";
+		$tabla.= "<th id='thT'>Usuario</th>";
+		$tabla.= "<th id='thT'>Tipo Usuario</th>";
+		$tabla.= "<th id='thT'>Departamento</th>";
 		$tabla.= "</tr>";
 		while($registro = mysql_fetch_array($resultado))
 		{
 			$tabla.="<tr>";
-			$tabla.="<td>".$registro["usuario"]."</td>";
-			$tabla.="<td>".$registro["tipousuario"]."</td>";
-			$tabla.="<td>".$registro["departamento"]."</td>";
+			$tabla.="<td class='tdT'>".$registro["usuario"]."</td>";
+			$tabla.="<td class='tdT'>".$registro["tipoUsuario"]."</td>";
+			$tabla.="<td class='tdT'>".$registro["departamento"]."</td>";
 			$tabla.="</tr>";
 		}
 	}

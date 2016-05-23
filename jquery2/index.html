@@ -31,8 +31,8 @@
  					</article>
   					<article class="panel-body">
     					<form action="#" id="frmValidaEntrada">
-    						<input type="text" id="txtUsuario" required placeholder="Usuario" class="form-control" autofocus>
-    						<input type="password" id="txtClave" required placeholder="Contraseña" class="form-control">
+    						<input type="text" id="txtUsuario" value="pw" required placeholder="Usuario" class="form-control" autofocus>
+    						<input type="password" id="txtClave" value="1234" required placeholder="Contraseña" class="form-control">
     						<input type="submit" class="btn btn-success btn-lg btn-block" value="Entrar">
     					</form>
   					</article>
@@ -69,13 +69,13 @@
 					</article>
 						<article class="panel-body">
 							<form action="#" id="frmBajaUsuarios" name="frmBajaUsuarios">
-								<input type="text" class="form-control" id="txtNombreUsuarioBaja" name="txtNombreUsuarioBaja" placeholder="Usuario" required>
-								<input type="password" class="form-control" id="txtClaveUsuarioBaja" name="txtClaveUsuarioBaja" placeholder="Clave" required> <!-- readonly="readonly" -->
-								<select name="txtTipoUsuarioBaja" id="txtTipoUsuarioBaja" class="form-control" disabled>
-									<option value="vigente">Vigente</option>
-									<option value="baja">Baja</option>
-								</select>
-								<input type="text" class="form-control" id="txtDepartamentoBaja" name="txtDepartamentoBaja" placeholder="Departamento" required disabled>
+								<input type="text" class="form-control" id="txtNombreUsuarioBaja" name="txtNombreUsuarioBaja" placeholder="Usuario" required>		
+									<input type="password" class="form-control" id="txtClaveUsuarioBaja" name="txtClaveUsuarioBaja" placeholder="Clave" required disabled> <!-- readonly="readonly" -->
+									<select name="txtTipoUsuarioBaja" id="txtTipoUsuarioBaja" class="form-control" disabled>
+										<option value="vigente">Vigente</option>
+										<option value="baja">Baja</option>
+									</select>
+									<input type="text" class="form-control" id="txtDepartamentoBaja" name="txtDepartamentoBaja" placeholder="Departamento" required disabled>
 								<input type="submit" id="btnBajaUsuario" name="btnBajaUsuario" class="btn btn-danger btn-lg btn-block">
 							</form>
 						</article>

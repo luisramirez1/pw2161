@@ -60,6 +60,43 @@ h2
 	width: 320px;
 }
 
+#tabla2
+{
+	color: ;
+}
+
+#usuario 
+{
+	color: ;
+}
+
+#tabla2
+{
+	background: #9A8181;
+	color: #252525;
+}
+
+#thT
+{
+	text-align: center;
+}
+
+#txtClaveUsuarioBaja, #txtTipoUsuarioBaja, #txtDepartamentoBaja
+{
+	display: none;
+	margin: 0 auto;
+	width: 417.5px;
+}
+
+.tdT
+{
+	background: #6F6F6F;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
 .btn-primary
 {
 	background:	#4682B4;

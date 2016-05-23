@@ -1,6 +1,6 @@
 
 var iniciaApp = function(){
-	var banderaAlta=true;
+	//var banderaAlta=true;
 	var validarEntrada = function(){
 		//Invalida los eventos que no corresponden a esta función.
 		event.preventDefault();
@@ -53,39 +53,22 @@ var iniciaApp = function(){
 		
 		console.log("Se disparó el Submit");
 	}
-
-	var contadora = 1;
-	window.onload = function(){
-    	document.getElementById("btnAltas").onclick = function(){
-       		contadora++;
-    	}
-	}
-	var contador = 1;
-		window.onclick = function(){
-    		document.getElementById("btnBajas").onclick = function(){
-        		contador++;
-    	}
-	}
-	var contadoraa = 1;
-		window.onclick = function(){
-    		document.getElementById("btnConsultas").onclick = function(){
-        		contador++;
-    	}
-	}
-
+	contAltas = 0;
 	var Altas = function()
 	{
 		//Mostramos el formulario
-		//$("nav").hide();
-		
-		if(contadora%2==0){
-			$("#altaUsuarios").hide("slow");
-		}
-		else
+		if(contAltas == 0)
 		{
-			if(contador%2!=0){
+			$("#bajaUsuarios").hide("slow");
 			$("#altaUsuarios").show("slow");
-			}
+			$("#consultasUsuarios").hide("slow");
+			contAltas = 1;
+			contBajas = 0;
+			contConsultas = 0;
+		}else{
+
+			$("#altaUsuarios").hide("slow");
+			contAltas = 0;
 		}
 	}
 
@@ -120,23 +103,24 @@ var iniciaApp = function(){
 			}
 		});
 	}
-
+	var contBajas = 0;
 	var Bajas = function()
 	{
 		//Mostramos el formulario
-		//$("nav").hide();
-		
-		if(contador%2==0){
-			$("#bajaUsuarios").hide("slow");
-		}
-		else
+		if(contBajas == 0)
 		{
-			if(contadora%2!=0){
 			$("#bajaUsuarios").show("slow");
-			}
+			$("#altaUsuarios").hide("slow");
+			$("#consultasUsuarios").hide("slow");
+			contBajas = 1;
+			contAltas = 0;
+			contConsultas = 0;
+		}else{
+
+			$("#bajaUsuarios").hide("slow");
+			contBajas = 0;
 		}
 	}
-	
 	var BajaUsuario = function()
 	{
 		event.preventDefault();
@@ -189,14 +173,13 @@ var iniciaApp = function(){
 			data: parametros,
 			success: function(response){
 				console.log(response);
-				if(response.respuesta && !banderaAlta )//¬¬
+				if(response.respuesta)
 				{
-				
 					$("#txtNombreUsuario").val(response.nom);		
-					$("#txtClaveUsuario").val(response.cla);
-					$("#txtTipoUsuario").val(response.tipo);
-					$("#txtDepartamento").val(response.depto);
-					$(".elemBaja").show("slow");
+					$("#txtClaveUsuarioBaja").val(response.cla);
+					$("#txtTipoUsuarioBaja").val(response.tipo);
+					$("#txtDepartamentoBaja").val(response.depto);
+					$("#txtClaveUsuarioBaja, #txtTipoUsuarioBaja, #txtDepartamentoBaja").show("slow");
 				}
 				else
 				{	
@@ -208,18 +191,29 @@ var iniciaApp = function(){
 			}
 		});
 	}
-	
+
+	var BuscaUsuario2 = function()
+	{
+		$("#txtClaveUsuarioBaja, #txtTipoUsuarioBaja, #txtDepartamentoBaja").hide("slow");
+	}
+
+	var contConsultas = 0;
 	var Consultas = function()
 	{
-		if(contadoraa%2==0){
-			$("#consultasUsuarios").hide("slow");
-		}
-		else
+		if(contConsultas == 0)
 		{
-			if(contadora%2!=0){
+			$("#bajaUsuarios").hide("slow");
+			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").show("slow");
-			}
+			contConsultas = 1;
+			contAltas = 0;
+			contBajas = 0;
+		}else{
+
+			$("#consultasUsuarios").hide("slow");
+			contConsultas = 0;
 		}
+
 		var parametros = "accion=consultas"+
 						 "&id="+Math.random();
 		$.ajax({
@@ -235,7 +229,6 @@ var iniciaApp = function(){
 				if (response.respuesta == true) 
 				{
 					$("#tablaConsultas").html(response.tabla);
-					//$("#tablaConsultas").append(response.tabla);
 				}
 		    },
 		    error: function(xhr,ajx,thrownError){
@@ -250,6 +243,7 @@ var iniciaApp = function(){
 	$("#btnBajas").on("click",Bajas);
 	$("#frmBajaUsuarios").on("submit",BajaUsuario);
 	$("#txtNombreUsuarioBaja").on("focusout", BuscaUsuario);
+	$("#txtNombreUsuarioBaja").on("focus", BuscaUsuario2);
 	$("#btnConsultas").on("click",Consultas)
 }
 $(document).on("ready",iniciaApp);
