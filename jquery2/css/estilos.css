@@ -1,5 +1,6 @@
 body 
 {
+	background-color: #222222;
 	font-size: 16px;
 	margin: 0 auto;
 	max-width: 1024px;
@@ -19,12 +20,15 @@ header nav ul li
 
 header nav ul li button
 {
-	width: 89px;
+	width: 100px;
 }
 
 h1
 {
+	color: white;
+	font-weight: bold;
 	text-align: center;
+	margin-bottom: 10px;
 }
 
 h2
@@ -33,20 +37,37 @@ h2
 	text-align: center;
 
 }
-input
-{
-
-}
 
 #altaUsuarios
 {
 	display: none;
 	margin: 0 auto;
-	width: 320px;
+	margin-top: 50px;
+	width: 450px;
 }
 
+#bajaUsuarios
+{
+	display: none;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 450px;
+}
 #datosUsuario
 {
 	margin: 0 auto;
+	margin-top: 50px;
 	width: 320px;
+}
+
+.btn-primary
+{
+	background:	#4682B4;
+	border: #4682B4;
+	color: #FFF8DC;
+}
+
+.panel-title
+{
+	font-weight: bold;
 }

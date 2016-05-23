@@ -41,7 +41,6 @@ var iniciaApp = function(){
 				console.log("Algo salió mal");
 			}
 		});
-
 		/*if(usuario == "pw" && clave == "1234"){
 			alert("Bienvenido "+usuario);
 			//Dar entrada al usuario:
@@ -53,11 +52,34 @@ var iniciaApp = function(){
 		
 		console.log("Se disparó el Submit");
 	}
+
+	var contadora = 1;
+	window.onload = function(){
+    	document.getElementById("btnAltas").onclick = function(){
+       		contadora++;
+    	}
+	}
+	var contador = 1;
+		window.onclick = function(){
+    		document.getElementById("btnBajas").onclick = function(){
+        		contador++;
+    	}
+	}
+
 	var Altas = function()
 	{
 		//Mostramos el formulario
 		//$("nav").hide();
-		$("#altaUsuarios").show("slow");
+		
+		if(contadora%2==0){
+			$("#altaUsuarios").hide("slow");
+		}
+		else
+		{
+			if(contador%2!=0){
+			$("#altaUsuarios").show("slow");
+			}
+		}
 	}
 
 	var AltaUsuario = function()
@@ -79,6 +101,7 @@ var iniciaApp = function(){
 			success: function(response){
 				if(response.respuesta == true){
 					alert("Usuario registrado correctamente");
+					$("#altaUsuarios").hide("slow");
 				}
 				else
 				{
@@ -88,11 +111,90 @@ var iniciaApp = function(){
 			error: function(xhr,ajx,thrownError){
 
 			}
-		})
+		});
 	}
 
+	var Bajas = function()
+	{
+		//Mostramos el formulario
+		//$("nav").hide();
+		
+		if(contador%2==0){
+			$("#bajaUsuarios").hide("slow");
+		}
+		else
+		{
+			if(contadora%2!=0){
+			$("#bajaUsuarios").show("slow");
+			}
+		}
+	}
+	
+	var BajaUsuario = function()
+	{
+		event.preventDefault();
+		//alert($("#frmAltaUsuarios").serialize());
+		var datos = $("#frmBajaUsuarios").serialize();
+		var parametros = "accion=bajaUsuario&"+datos+
+						 "&id="+Math.random();
+		//var parametros = "accion=guardaUsuario&"+datos+
+		$.ajax({
+			beforeSend: function(){
+				console.log("Validar al usuario");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				console.log(response);
+				if(response.respuesta == true){
+					alert("Usuario eliminado correctamente");
+					$("#bajaUsuarios").hide("slow");
+				}
+				else
+				{
+					alert("Usuario no registrado");
+				}
+			},
+			error: function(xhr,ajx,thrownError){
+
+			}
+		});
+	}
+
+	var BuscaUsuario = function()
+	{
+		event.preventDefault();
+		var datos = $("#txtNombreUsuarioBaja").serialize();
+		var parametros = "accion=buscaUsuario&"+datos+
+						 "&id="+Math.random();
+		//var parametros = "accion=guardaUsuario&"+datos+
+		$.ajax({
+			beforeSend: function(){
+				console.log("Validar al usuario");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				console.log(response);
+				
+			},
+			error: function(xhr,ajx,thrownError){
+
+			}
+		});
+	}
+	
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnAltas").on("click",Altas);
 	$("#frmAltaUsuarios").on("submit",AltaUsuario);
+	$("#btnBajas").on("click",Bajas);
+	$("#frmBajaUsuarios").on("submit",BajaUsuario);
+	$("#txtNombreUsuarioBaja").on("focusout", BuscaUsuario);
 }
 $(document).on("ready",iniciaApp);

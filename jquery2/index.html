@@ -10,15 +10,15 @@
 </head>
 <body>
 	<header>
-		<h1>Sistema de Ejemplo</h1>
+		<h1 id="titulo">Sistema de Ejemplo</h1>
 		<nav>
 			<ul>
-				<li><button class="btn btn-default">Inicio</button></li>
-				<li><button id="btnAltas"class="btn btn-primary">Altas</button></li>
-				<li><button class="btn btn-primary">Bajas</button></li>
-				<li><button class="btn btn-warning">Cambios</button></li>
-				<li><button class="btn btn-danger">Consultas</button></li>
-				<li><button class="btn btn-info">Salir</button></li>
+				<li><button class="btn btn-primary glyphicon glyphicon-home"> Inicio</button></li>
+				<li><button id="btnAltas" class="btn btn-primary glyphicon glyphicon-plus"> Altas</button></li>
+				<li><button id="btnBajas" class="btn btn-primary glyphicon glyphicon-minus"> Bajas</button></li>
+				<li><button class="btn btn-primary glyphicon glyphicon-pencil"> Cambios</button></li>
+				<li><button class="btn btn-primary glyphicon glyphicon-eye-open"> Consultas</button></li>
+				<li><button class="btn btn-primary glyphicon glyphicon-off"> Salir</button></li>
 			</ul>
 		</nav>
 	</header>
@@ -41,17 +41,46 @@
 		</section>
 		<section>
 			<article id="altaUsuarios">
-				<h2>Alta de usuarios</h2>
-				<form action="#" id="frmAltaUsuarios" name="frmAltaUsuarios">
-					<input type="text" class="form-control" id="txtNombreUsuario" name="txtNombreUsuario" placeholder="Usuario" required>
-					<input type="password" class="form-control" id="txtClaveUsuario" name="txtClaveUsuario" placeholder="Clave" required>
-					<select name="txtTipoUsuario" id="txtTipoUsuario" class="form-control">
-						<option value="vigente">Vigente</option>
-						<option value="baja">Baja</option>
-					</select>
-					<input type="text" class="form-control" id="txtDepartamento" name="txtDepartamento" placeholder="Departamento" required>
-					<input type="submit" id="btnAltaUsuario" name="btnAltaUsuario" class="btn btn-success btn-lg btn-block">
-				</form>
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h1 class="panel-title">Alta de usuarios</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmAltaUsuarios" name="frmAltaUsuarios">
+								<input type="text" class="form-control" id="txtNombreUsuario" name="txtNombreUsuario" placeholder="Usuario" required>
+								<input type="password" class="form-control" id="txtClaveUsuario" name="txtClaveUsuario" placeholder="Clave" required>
+								<select name="txtTipoUsuario" id="txtTipoUsuario" class="form-control">
+									<option value="vigente">Vigente</option>
+									<option value="baja">Baja</option>
+								</select>
+								<input type="text" class="form-control" id="txtDepartamento" name="txtDepartamento" placeholder="Departamento" required>
+								<input type="submit" id="btnAltaUsuario" name="btnAltaUsuario" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="bajaUsuarios">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Baja de usuarios</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmBajaUsuarios" name="frmBajaUsuarios">
+								<input type="text" class="form-control" id="txtNombreUsuarioBaja" name="txtNombreUsuarioBaja" placeholder="Usuario" required>
+								<input type="password" class="form-control" id="txtClaveUsuarioBaja" name="txtClaveUsuarioBaja" placeholder="Clave" required> <!-- readonly="readonly" -->
+								<select name="txtTipoUsuarioBaja" id="txtTipoUsuarioBaja" class="form-control" disabled>
+									<option value="vigente">Vigente</option>
+									<option value="baja">Baja</option>
+								</select>
+								<input type="text" class="form-control" id="txtDepartamentoBaja" name="txtDepartamentoBaja" placeholder="Departamento" required disabled>
+								<input type="submit" id="btnBajaUsuario" name="btnBajaUsuario" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
 			</article>
 		</section>
 	</main>
