@@ -35,7 +35,7 @@ var iniciaApp = function(){
 					$("#datosUsuario").hide();
 					$("nav").show("slow");
 				} else{
-					alert("Usuario/contraseña incorrecto(s)");
+					$("#usuarioIncorrecto").show("slow");
 				}
 			},
 			error: function(xhr,ajaxOptions,thrownError){
@@ -300,6 +300,12 @@ var iniciaApp = function(){
 		});
 	}
 
+	var BajaDinamica = function()
+	{
+		var usuario = $(this).attr("id");
+		alert(usuario);
+	}
+
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnAltas").on("click",Altas);
 	$("#frmAltaUsuarios").on("submit",AltaUsuario);
@@ -310,5 +316,10 @@ var iniciaApp = function(){
 	$("#btnConsultas").on("click",Consultas)
 	$("#btnActualizaUsuario").on("click",Actualiza);
 	$("#frmActualizaUsuarios").on("submit",ActualizaUsuario);
+	
+	//Eventos Dinamicos
+	$("#tablaConsultas").on("click","button",BajaDinamica);
+	//Otra forma
+	//$("#tablaConsultas > input").on("click",BajaDinamica)
 }
 $(document).on("ready",iniciaApp);
