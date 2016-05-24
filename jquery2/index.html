@@ -16,7 +16,7 @@
 				<li><button class="btn btn-primary glyphicon glyphicon-home"> Inicio</button></li>
 				<li><button id="btnAltas" class="btn btn-primary glyphicon glyphicon-plus"> Altas</button></li>
 				<li><button id="btnBajas" class="btn btn-primary glyphicon glyphicon-minus"> Bajas</button></li>
-				<li><button class="btn btn-primary glyphicon glyphicon-pencil"> Cambios</button></li>
+				<li><button id="btnActualizaUsuario" class="btn btn-primary glyphicon glyphicon-pencil"> Cambios</button></li>
 				<li><button id="btnConsultas"class="btn btn-primary glyphicon glyphicon-eye-open"> Consultas</button></li>
 				<li><button class="btn btn-primary glyphicon glyphicon-off"> Salir</button></li>
 			</ul>
@@ -93,6 +93,28 @@
 							<table class="table table-striped" name="tablaConsultas" id="tablaConsultas">
 					
 							</table>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="actualizaUsuarios">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Actualizar usuarios</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmActualizaUsuarios" name="frmActualizaUsuarios">
+								<input type="text" class="form-control" id="txtNombreUsuarioActualiza" name="txtNombreUsuarioActualiza" placeholder="Usuario" required>		
+									<input type="password" class="form-control" id="txtClaveUsuarioActualiza" name="txtClaveUsuarioActualiza" placeholder="Clave" required> <!-- readonly="readonly" -->
+									<select name="txtTipoUsuarioActualiza" id="txtTipoUsuarioActualiza" class="form-control">
+										<option value="vigente">Vigente</option>
+										<option value="baja">Baja</option>
+									</select>
+									<input type="text" class="form-control" id="txtDepartamentoActualiza" name="txtDepartamentoActualiza" placeholder="Departamento" required>
+								<input type="submit" id="btnActualizaUsuario" name="btnActualizaUsuario" class="btn btn-danger btn-lg btn-block">
+							</form>
 						</article>
 					</article>
 				</article>

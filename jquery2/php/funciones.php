@@ -154,6 +154,31 @@ function consultas()
 	print json_encode($salidaJSON);
 }
 
+function actualizaUsuario()
+{
+	$usuario = GetSQLValueString($_POST["txtNombreUsuarioActualiza"],"text");
+	$clave = GetSQLValueString(md5($_POST["txtClaveUsuarioActualiza"]),"text");
+	$tipo = GetSQLValueString($_POST["txtTipoUsuarioActualiza"],"text");
+	$depto = GetSQLValueString($_POST["txtDepartamentoActualiza"],"long");
+	$respuesta = false;
+	//Conecto al servidor de BD
+	//Servidor, usuario, clave
+	$conexion = mysql_connect("localhost","root","");
+	//Seleccionar la BD
+	mysql_select_db("cursopw");
+	//$guarda = sprintf("insert into usuarios values(%s,%s,%s,%s)",$usuario,$clave,$tipo,$depto);
+	$actualiza = sprintf("update usuarios set usuario=%s,clave=%s,tipoUsuario=%s,departamento=%s where usuario=%s limit 1",$usuario,$clave,$tipo,$depto,$usuario);
+	//Ejecutamos la consulta
+	mysql_query($actualiza);
+	//Cuantos registros tenemos afectados
+	if(mysql_affected_rows() > 0)
+	{
+		$respuesta = true;
+	}
+	$salidaJSON = array('respuesta' => $respuesta);
+	print json_encode($salidaJSON);	
+}
+
 $accion = $_POST["accion"];
 //Menú principal
 switch ($accion) {
@@ -171,6 +196,9 @@ switch ($accion) {
 		break;
 	case 'consultas':
 		consultas();
+		break;
+	case 'actualizaUsuario':
+		actualizaUsuario();
 		break;
 	default:
 		# code...

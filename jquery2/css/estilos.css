@@ -46,7 +46,7 @@ h2
 	width: 450px;
 }
 
-#bajaUsuarios, #consultasUsuarios
+#bajaUsuarios, #consultasUsuarios, #actualizaUsuarios
 {
 	display: none;
 	margin: 0 auto;

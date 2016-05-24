@@ -62,9 +62,11 @@ var iniciaApp = function(){
 			$("#bajaUsuarios").hide("slow");
 			$("#altaUsuarios").show("slow");
 			$("#consultasUsuarios").hide("slow");
+			$("#actualizaUsuarios").hide("slow");
 			contAltas = 1;
 			contBajas = 0;
 			contConsultas = 0;
+			contActualiza = 0;
 		}else{
 
 			$("#altaUsuarios").hide("slow");
@@ -97,6 +99,7 @@ var iniciaApp = function(){
 				{
 					alert("No se pudo guardar la informacion");
 				}
+				contAltas=0;
 			},
 			error: function(xhr,ajx,thrownError){
 
@@ -112,6 +115,8 @@ var iniciaApp = function(){
 			$("#bajaUsuarios").show("slow");
 			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").hide("slow");
+			$("#actualizaUsuarios").hide("slow");
+			contActualiza = 0;
 			contBajas = 1;
 			contAltas = 0;
 			contConsultas = 0;
@@ -148,6 +153,7 @@ var iniciaApp = function(){
 				{
 					alert("Usuario no registrado");
 				}
+				contBajas=0;
 			},
 			error: function(xhr,ajx,thrownError){
 
@@ -183,7 +189,7 @@ var iniciaApp = function(){
 				}
 				else
 				{	
-				
+					alert("Usuario no registrado");
 				}
 			},
 			error: function(xhr,ajx,thrownError){
@@ -205,6 +211,8 @@ var iniciaApp = function(){
 			$("#bajaUsuarios").hide("slow");
 			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").show("slow");
+			$("#actualizaUsuarios").hide("slow");
+			contActualiza = 0;
 			contConsultas = 1;
 			contAltas = 0;
 			contBajas = 0;
@@ -237,6 +245,61 @@ var iniciaApp = function(){
 		});
 	}
 
+	var contActualiza = 0;
+	var Actualiza = function()
+	{
+		if(contActualiza == 0)
+		{
+			$("#bajaUsuarios").hide("slow");
+			$("#altaUsuarios").hide("slow");
+			$("#consultasUsuarios").hide("slow");
+			$("#actualizaUsuarios").show("slow");
+			contActualiza = 1;
+			contConsultas = 0;
+			contAltas = 0;
+			contBajas = 0;
+		}else{
+
+			$("#actualizaUsuarios").hide("slow");
+			contActualiza = 0;
+		}
+	}
+
+	var ActualizaUsuario = function()
+	{
+		event.preventDefault();
+		//alert($("#frmAltaUsuarios").serialize());
+		var datos = $("#frmActualizaUsuarios").serialize();
+		var parametros = "accion=actualizaUsuario&"+datos+
+						 "&id="+Math.random();
+		//var parametros = "accion=guardaUsuario&"+datos+
+		$.ajax({
+			beforeSend: function(){
+				console.log("Validar al usuario");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				console.log(response);
+				if(response.respuesta == true){
+					alert("Usuario actualizado correctamente");
+					$("#actualizaUsuarios").hide("slow");
+				}
+				else
+				{
+					alert("Usuario no registrado");
+				}
+				contActualiza = 0;
+			},
+			error: function(xhr,ajx,thrownError){
+
+			}
+		});
+	}
+
 	$("#frmValidaEntrada").on("submit",validarEntrada);
 	$("#btnAltas").on("click",Altas);
 	$("#frmAltaUsuarios").on("submit",AltaUsuario);
@@ -245,5 +308,7 @@ var iniciaApp = function(){
 	$("#txtNombreUsuarioBaja").on("focusout", BuscaUsuario);
 	$("#txtNombreUsuarioBaja").on("focus", BuscaUsuario2);
 	$("#btnConsultas").on("click",Consultas)
+	$("#btnActualizaUsuario").on("click",Actualiza);
+	$("#frmActualizaUsuarios").on("submit",ActualizaUsuario);
 }
 $(document).on("ready",iniciaApp);
