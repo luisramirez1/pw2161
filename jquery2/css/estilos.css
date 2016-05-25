@@ -35,7 +35,44 @@ h2
 {
 	margin-top: 50px;
 	text-align: center;
+}
 
+h3
+{
+	color: #41004B;
+	font-weight: bold;
+	text-align: center;
+}
+
+img
+{
+	border-radius: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+	max-width: 190px;
+}
+
+span
+{
+	font-style: italic;
+}
+
+#art0
+{
+	margin: 0 auto;
+	text-align: center;
+}
+
+#art1
+{
+	display: none;
+	text-align: center;
+}
+
+#art2
+{
+	display: none;
+	text-align: center;
 }
 
 #altaUsuarios
@@ -53,6 +90,17 @@ h2
 	margin-top: 50px;
 	width: 450px;
 }
+
+#btnRedes
+{
+	background: white;
+	border: 1px solid white;
+	border-radius: 100%;
+	margin: 0 auto;
+	margin-top: 10px;
+	outline: none;
+}
+
 #datosUsuario
 {
 	margin: 0 auto;
@@ -60,14 +108,26 @@ h2
 	width: 320px;
 }
 
-#tabla2
+#flechaL, #flechaR, #flechaM
 {
-	color: ;
+	background: white;
+	border: 1px solid white;
+	margin-top: 10px;
+	outline: none;
 }
 
-#usuario 
+#inicio
 {
-	color: ;
+	display: none;
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 450px;
+}
+
+#logoTec
+{
+	margin-top: 10px;
+	max-width: 61%;
 }
 
 #tabla2
@@ -88,9 +148,19 @@ h2
 	width: 417.5px;
 }
 
-#usuarioIncorrecto
+#redesS
+{
+	margin: 0 auto;
+	text-align: center;
+	width: 30px;
+
+}
+
+.alert
 {
 	display: none;
+	margin: 0 auto;
+	width: 500px;
 }
 
 .tdT

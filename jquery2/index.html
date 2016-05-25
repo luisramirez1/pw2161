@@ -13,20 +13,47 @@
 		<h1 id="titulo">Sistema de Ejemplo</h1>
 		<nav>
 			<ul>
-				<li><button class="btn btn-primary glyphicon glyphicon-home"> Inicio</button></li>
+				<li><button id="btnInicio" class="btn btn-primary glyphicon glyphicon-home" default> Inicio</button></li>
 				<li><button id="btnAltas" class="btn btn-primary glyphicon glyphicon-plus"> Altas</button></li>
 				<li><button id="btnBajas" class="btn btn-primary glyphicon glyphicon-minus"> Bajas</button></li>
 				<li><button id="btnActualizaUsuario" class="btn btn-primary glyphicon glyphicon-pencil"> Cambios</button></li>
 				<li><button id="btnConsultas"class="btn btn-primary glyphicon glyphicon-eye-open"> Consultas</button></li>
-				<li><button class="btn btn-primary glyphicon glyphicon-off"> Salir</button></li>
+				<li><button id="salir" class="btn btn-primary glyphicon glyphicon-off"> Salir</button></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
-			<article class="alert alert-warning alert-dismissible" id="usuarioIncorrecto">
+			<!-- Alertas de Advertencia -->
+			<article class="alert alert-danger alert-dismissible" id="usuarioIncorrecto">
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span></button>
-  				<strong>Warning!</strong> Better check yourself, you're not looking too good.
+  				<strong>Advertencia!</strong> Usuario y/o Contraseña incorrectos.
+			</article>
+			<article class="alert alert-danger alert-dismissible" id="usuarioNoRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> No se pudo registrar el usuario.
+			</article>
+			<article class="alert alert-danger alert-dismissible" id="usuarioNoRegistrado2">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> Usuario no registrado.
+			</article>
+			<!-- Alertas de Procesos Correctos -->
+			<article class="alert alert-success alert-dismissible" id="usuarioRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario registrado correctamente.
+			</article>
+			<article class="alert alert-success alert-dismissible" id="usuarioEliminado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario eliminado correctamente.
+			</article>
+			<article class="alert alert-success alert-dismissible" id="usuarioActualizado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario actualizado correctamente.
 			</article>
 		<section>
 			<article>
@@ -120,6 +147,40 @@
 									<input type="text" class="form-control" id="txtDepartamentoActualiza" name="txtDepartamentoActualiza" placeholder="Departamento" required>
 								<input type="submit" id="btnActualizaUsuario" name="btnActualizaUsuario" class="btn btn-danger btn-lg btn-block">
 							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="inicio">
+				<article class="panel panel-info">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Información</h2>
+					</article>
+						<article id="art0" class="panel-body">
+							<article id="art1">
+								<h3>Luis Fernando Ramirez Salazar</h3> 
+								<span>Alumno de la materia de Programación Web</span> <br>
+								<img src="img/luis.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/luisramirez.lfrs"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';"></button>
+								<button id="btnRedes" onclick=location="https://github.com/luisramirez1"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article> 
+							<article id="art2">
+								<h3>Martin Leonardo Nevarez Rivas</h3> 
+								<span>Maestro de la materia de Programación Web</span> <br>
+								<img src="img/nevarez.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/martinevarezrivas"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';">
+								</button>
+								<button id="btnRedes" onclick=location="https://github.com/martileos"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article>
+							<article id="art3">
+								<h3>Instituto Tecnológico de Culiacán</h3>
+								<img src="img/tec.png" alt="" id="logoTec">
+							</article>
+							<button id="flechaL" class="glyphicon glyphicon-chevron-left"></button>
+							<button id="flechaM" class="glyphicon glyphicon-option-horizontal"></button>
+							<button id="flechaR" class="glyphicon glyphicon-chevron-right"></button>
 						</article>
 					</article>
 				</article>

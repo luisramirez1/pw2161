@@ -147,9 +147,10 @@ function consultas()
 			$tabla.="<td class='tdT'>".$registro["usuario"]."</td>";
 			$tabla.="<td class='tdT'>".$registro["tipoUsuario"]."</td>";
 			$tabla.="<td class='tdT'>".$registro["departamento"]."</td>";
-			$tabla.="<td><button id='".$registro["usuario"]."' class='btn btn-danger'>Baja</button></td>";
+			$tabla.="<td> <button id='".$registro["usuario"]."' class='btn btn-danger'>Baja</button></td>";
 			$tabla.="</tr>";
 		}
+		$registro2 = mysql_fetch_array($resultado);
 	}
 	$salidaJSON = array('respuesta' => $respuesta, 
 						'tabla'		=> $tabla);
@@ -181,6 +182,28 @@ function actualizaUsuario()
 	print json_encode($salidaJSON);	
 }
 
+function bajaDinamica()
+{
+	$usuario = usuario;
+	$respuesta = false;
+	//Conecto al servidor de BD
+	//Servidor, usuario, clave
+	$conexion = mysql_connect("localhost","root","");
+	//Seleccionar la BD
+	mysql_select_db("cursopw");
+	$elimina = sprintf("delete from usuarios where usuario=%s limit 1",$usuario);
+	//Ejecutamos la consulta
+	echo $elimina;
+	mysql_query($elimina);
+	//Cuantos registros tenemos afectados
+	if(mysql_affected_rows() > 0)
+	{
+		$respuesta = true;
+	}
+	$salidaJSON = array('respuesta' => $respuesta);
+	print json_encode($salidaJSON);	
+}
+
 $accion = $_POST["accion"];
 //Menú principal
 switch ($accion) {
@@ -201,6 +224,9 @@ switch ($accion) {
 		break;
 	case 'actualizaUsuario':
 		actualizaUsuario();
+		break;
+	case 'bajaDinamica':
+		bajaDinamica();
 		break;
 	default:
 		# code...

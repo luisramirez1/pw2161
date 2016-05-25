@@ -34,6 +34,7 @@ var iniciaApp = function(){
 				if (response.respuesta){
 					$("#datosUsuario").hide();
 					$("nav").show("slow");
+					$("#inicio").show("slow");
 				} else{
 					$("#usuarioIncorrecto").show("slow");
 				}
@@ -63,10 +64,12 @@ var iniciaApp = function(){
 			$("#altaUsuarios").show("slow");
 			$("#consultasUsuarios").hide("slow");
 			$("#actualizaUsuarios").hide("slow");
+			$("#inicio").hide("slow");
 			contAltas = 1;
 			contBajas = 0;
 			contConsultas = 0;
 			contActualiza = 0;
+			contInicio = 0;
 		}else{
 
 			$("#altaUsuarios").hide("slow");
@@ -92,12 +95,11 @@ var iniciaApp = function(){
 			data: parametros,
 			success: function(response){
 				if(response.respuesta == true){
-					alert("Usuario registrado correctamente");
-					$("#altaUsuarios").hide("slow");
+					$("#usuarioRegistrado").show("slow");
 				}
 				else
 				{
-					alert("No se pudo guardar la informacion");
+					$("#usuarioNoRegistrado").show("slow");
 				}
 				contAltas=0;
 			},
@@ -116,10 +118,12 @@ var iniciaApp = function(){
 			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").hide("slow");
 			$("#actualizaUsuarios").hide("slow");
+			$("#inicio").hide("slow");
 			contActualiza = 0;
 			contBajas = 1;
 			contAltas = 0;
 			contConsultas = 0;
+			contInicio = 0;
 		}else{
 
 			$("#bajaUsuarios").hide("slow");
@@ -146,12 +150,11 @@ var iniciaApp = function(){
 			success: function(response){
 				console.log(response);
 				if(response.respuesta == true){
-					alert("Usuario eliminado correctamente");
-					$("#bajaUsuarios").hide("slow");
+					$("#usuarioEliminado").show("slow");
 				}
 				else
 				{
-					alert("Usuario no registrado");
+					$("#usuarioNoRegistrado2").show("slow");
 				}
 				contBajas=0;
 			},
@@ -189,7 +192,7 @@ var iniciaApp = function(){
 				}
 				else
 				{	
-					alert("Usuario no registrado");
+					$("#usuarioNoRegistrado2").show("slow");
 				}
 			},
 			error: function(xhr,ajx,thrownError){
@@ -212,10 +215,12 @@ var iniciaApp = function(){
 			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").show("slow");
 			$("#actualizaUsuarios").hide("slow");
+			$("#inicio").hide("slow");
 			contActualiza = 0;
 			contConsultas = 1;
 			contAltas = 0;
 			contBajas = 0;
+			contInicio = 0;
 		}else{
 
 			$("#consultasUsuarios").hide("slow");
@@ -254,10 +259,12 @@ var iniciaApp = function(){
 			$("#altaUsuarios").hide("slow");
 			$("#consultasUsuarios").hide("slow");
 			$("#actualizaUsuarios").show("slow");
+			$("#inicio").hide("slow");
 			contActualiza = 1;
 			contConsultas = 0;
 			contAltas = 0;
 			contBajas = 0;
+			contInicio = 0;
 		}else{
 
 			$("#actualizaUsuarios").hide("slow");
@@ -285,12 +292,11 @@ var iniciaApp = function(){
 			success: function(response){
 				console.log(response);
 				if(response.respuesta == true){
-					alert("Usuario actualizado correctamente");
-					$("#actualizaUsuarios").hide("slow");
+					$("#usuarioActualizado").show("slow");
 				}
 				else
 				{
-					alert("Usuario no registrado");
+					$("#usuarioNoRegistrado2").show("slow");
 				}
 				contActualiza = 0;
 			},
@@ -302,8 +308,99 @@ var iniciaApp = function(){
 
 	var BajaDinamica = function()
 	{
+		//event.preventDefault();
 		var usuario = $(this).attr("id");
-		alert(usuario);
+		//document.cookie = "var="+usuario;
+		//var datos = $(usuario).serialize();
+		var parametros = "accion=bajaDinamica&usuario="+usuario+
+						 "&id="+Math.random();
+		//var parametros = "accion=guardaUsuario&"+datos+
+		$.ajax({
+			beforeSend: function(){
+				console.log("Validar al usuario");
+			},
+			cache: false,
+			type: "POST",
+			dataType: "json",
+			url: "php/funciones.php",
+			data: parametros,
+			success: function(response){
+				console.log(response);
+				if(response.respuesta == true){
+					alert("netra");
+					$("#usuarioEliminado").show("slow");
+				}
+				else
+				{
+					$("#usuarioNoRegistrado2").show("slow");
+				}
+				contBajas=0;
+			},
+			error: function(xhr,ajx,thrownError){
+
+			}
+		});
+		
+	}
+
+	var CerrarAlert = function()
+	{
+		$("#usuarioIncorrecto").hide("slow");
+		$("#usuarioRegistrado").hide("slow");
+		$("#usuarioNoRegistrado").hide("slow");
+		$("#usuarioEliminado").hide("slow");
+		$("#usuarioNoRegistrado2").hide("slow");
+		$("#usuarioActualizado").hide("slow");
+	}
+
+	var Salir = function()
+	{
+		location.reload();
+	}
+	var contFlechas = 0;
+	
+	var FlechaL = function()
+	{
+		$("#art1").hide("fast");
+		$("#art2").show("fast");
+		$("#art3").hide("fast");
+	}
+
+	var FlechaR = function()
+	{
+		$("#art1").show("fast");
+		$("#art2").hide("fast");
+		$("#art3").hide("fast");
+	}
+
+	var FlechaM = function()
+	{
+		$("#art1").hide("fast");
+		$("#art2").hide("fast");
+		$("#art3").show("fast");
+	}
+
+	var contInicio = 0;
+	var Inicio = function()
+	{
+		if(contInicio == 0)
+		{
+			$("#bajaUsuarios").hide("slow");
+			$("#altaUsuarios").hide("slow");
+			$("#consultasUsuarios").hide("slow");
+			$("#actualizaUsuarios").hide("slow");
+			$("#inicio").show("slow");
+			contInicio = 1;
+			contAltas = 0;
+			contBajas = 0;
+			contConsultas = 0;
+			contActualiza = 0;
+		}else{
+
+			//$("#inicio").hide("slow");
+			contInicio = 0;
+		}
+
 	}
 
 	$("#frmValidaEntrada").on("submit",validarEntrada);
@@ -316,10 +413,15 @@ var iniciaApp = function(){
 	$("#btnConsultas").on("click",Consultas)
 	$("#btnActualizaUsuario").on("click",Actualiza);
 	$("#frmActualizaUsuarios").on("submit",ActualizaUsuario);
-	
+	$(".close").on("click",CerrarAlert);
+	$("#salir").on("click",Salir);
 	//Eventos Dinamicos
 	$("#tablaConsultas").on("click","button",BajaDinamica);
 	//Otra forma
 	//$("#tablaConsultas > input").on("click",BajaDinamica)
+	$("#flechaL").on("click",FlechaL);
+	$("#flechaR").on("click",FlechaR);
+	$("#flechaM").on("click",FlechaM);
+	$("#btnInicio").on("click",Inicio);
 }
 $(document).on("ready",iniciaApp);
