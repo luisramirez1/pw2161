@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Examen</title>
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/jquery-2.2.3.js"></script>
+	<script src="js/eventos.js"></script>
+</head>
+<body>
+	<header>
+		<h1 id="titulo">Sistema de Ejemplo Examen</h1>
+		<nav>
+			<ul>
+				<li><button id="btnInicio" class="btn btn-primary glyphicon glyphicon-home"> Inicio</button></li>
+				<li><button id="btnAltas" class="btn btn-primary glyphicon glyphicon-plus"> Altas</button></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+			<!-- Alertas de Advertencia -->
+			< <article class="alert alert-danger alert-dismissible" id="almacenNoRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> Almacen No Registrado.
+			</article>
+			<!-- Alertas de Procesos Correctos -->
+			<article class="alert alert-success alert-dismissible" id="almacenRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Almacen registrado correctamente.
+			</article>
+		<section>
+			<article id="altaAlmacenes">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h1 class="panel-title">Alta de Almacen</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmAltaAlmacen" name="frmAltaAlmacen">
+								<input type="text" class="form-control" id="txtIdAlmacen" name="txtIdAlmacen" placeholder="Id Almacen" required>
+								<input type="text" class="form-control" id="txtNombre" name="txtNombre" placeholder="Nombre del Almacen" required>
+								<input type="text" class="form-control" id="txtDireccion1" name="txtDireccion1" placeholder="Direccion #1" required>
+								<input type="text" class="form-control" id="txtDireccion2" name="txtDireccion2" placeholder="Direccion #2" required>
+								<input type="text" class="form-control" id="txtCP" name="txtCP" placeholder="Codigo Postal" required>
+								<input type="text" class="form-control" id="txtLocalidad" name="txtLocalidad" placeholder="Localidad" required>
+								<input type="text" class="form-control" id="txtProvincia" name="txtProvincia" placeholder="Provincia" required>
+								<input type="submit" id="btnAltaAlmacen" name="btnAltaAlmacen" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="inicio">
+				<article class="panel panel-info">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Información</h2>
+					</article>
+						<article id="art0" class="panel-body">
+							<article id="art1">
+								<h3>Luis Fernando Ramirez Salazar</h3> 
+								<span>Alumno de la materia de Programación Web</span> <br>
+								<img src="img/luis.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/luisramirez.lfrs"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';"></button>
+								<button id="btnRedes" onclick=location="https://github.com/luisramirez1"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article> 
+							<article id="art2">
+								<h3>Martin Leonardo Nevarez Rivas</h3> 
+								<span>Maestro de la materia de Programación Web</span> <br>
+								<img src="img/nevarez.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/martinevarezrivas"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';">
+								</button>
+								<button id="btnRedes" onclick=location="https://github.com/martileos"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article>
+							<article id="art3">
+								<h3>Instituto Tecnológico de Culiacán</h3>
+								<img src="img/tec.png" alt="" id="logoTec">
+							</article>
+							<button id="flechaL" class="glyphicon glyphicon-chevron-left"></button>
+							<button id="flechaM" class="glyphicon glyphicon-option-horizontal"></button>
+							<button id="flechaR" class="glyphicon glyphicon-chevron-right"></button>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+</html>
