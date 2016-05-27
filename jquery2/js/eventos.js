@@ -308,11 +308,9 @@ var iniciaApp = function(){
 
 	var BajaDinamica = function()
 	{
-		//event.preventDefault();
+		event.preventDefault();
 		var usuario = $(this).attr("id");
-		//document.cookie = "var="+usuario;
-		//var datos = $(usuario).serialize();
-		var parametros = "accion=bajaDinamica&usuario="+usuario+
+		var parametros = "accion=bajaDinamica&txtNombreUsuarioBaja="+usuario+
 						 "&id="+Math.random();
 		//var parametros = "accion=guardaUsuario&"+datos+
 		$.ajax({
@@ -327,7 +325,6 @@ var iniciaApp = function(){
 			success: function(response){
 				console.log(response);
 				if(response.respuesta == true){
-					alert("netra");
 					$("#usuarioEliminado").show("slow");
 				}
 				else

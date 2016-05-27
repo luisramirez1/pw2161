@@ -184,7 +184,7 @@ function actualizaUsuario()
 
 function bajaDinamica()
 {
-	$usuario = usuario;
+	$usuario = GetSQLValueString($_POST["txtNombreUsuarioBaja"],"text");
 	$respuesta = false;
 	//Conecto al servidor de BD
 	//Servidor, usuario, clave
@@ -193,7 +193,6 @@ function bajaDinamica()
 	mysql_select_db("cursopw");
 	$elimina = sprintf("delete from usuarios where usuario=%s limit 1",$usuario);
 	//Ejecutamos la consulta
-	echo $elimina;
 	mysql_query($elimina);
 	//Cuantos registros tenemos afectados
 	if(mysql_affected_rows() > 0)

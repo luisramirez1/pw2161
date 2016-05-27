@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>PreExamen</title>
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<script src="js/jquery-2.2.3.js"></script>
+	<script src="js/eventos.js"></script>
+</head>
+<body>
+	<header>
+		<h1 id="titulo">Sistema de Ejemplo PreExamen</h1>
+		<nav>
+			<ul>
+				<li><button id="btnInicio" class="btn btn-primary glyphicon glyphicon-home"> Inicio</button></li>
+				<li><button id="btnAltas" class="btn btn-primary glyphicon glyphicon-plus"> Altas</button></li>
+				<li><button id="btnBajas" class="btn btn-primary glyphicon glyphicon-minus"> Bajas</button></li>
+				<li><button id="btnActualiza" class="btn btn-primary glyphicon glyphicon-pencil"> Cambios</button></li>
+				<li><button id="btnConsultas"class="btn btn-primary glyphicon glyphicon-eye-open"> Consultas</button></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+			<!-- Alertas de Advertencia -->
+			<!-- <article class="alert alert-danger alert-dismissible" id="usuarioIncorrecto">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> Usuario y/o Contraseña incorrectos.
+			</article>
+			<article class="alert alert-danger alert-dismissible" id="usuarioNoRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> No se pudo registrar el usuario.
+			</article>
+			<article class="alert alert-danger alert-dismissible" id="usuarioNoRegistrado2">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Advertencia!</strong> Usuario no registrado.
+			</article> -->
+			<!-- Alertas de Procesos Correctos -->
+			<!-- <article class="alert alert-success alert-dismissible" id="usuarioRegistrado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario registrado correctamente.
+			</article>
+			<article class="alert alert-success alert-dismissible" id="usuarioEliminado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario eliminado correctamente.
+			</article>
+			<article class="alert alert-success alert-dismissible" id="usuarioActualizado">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span></button>
+  				<strong>Éxito!</strong> Usuario actualizado correctamente.
+			</article> -->
+		<section>
+			<article id="altaEncuestas">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h1 class="panel-title">Alta de Encuestas</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmAltaEncuestas" name="frmAltaEncuestas">
+								<input type="password" class="form-control" id="txtClaveEncuestas" name="txtClaveEncuestas" placeholder="Clave de la Encuesta" required>
+								<input type="text" class="form-control" id="txtNombreEncuestas" name="txtNombreEncuestas" placeholder="Nombre de la Encuesta" required>
+								<input type="text" class="form-control" id="txtPregunta1" name="txtPregunta1" placeholder="Pregunta #1" required>
+								<input type="text" class="form-control" id="txtRespuesta1" name="txtRespuesta1" placeholder="Respuesta #1" required>
+								<input type="text" class="form-control" id="txtPregunta2" name="txtPregunta2" placeholder="Pregunta #2" required>
+								<input type="text" class="form-control" id="txtRespuesta2" name="txtRespuesta2" placeholder="Respuesta #2" required>
+								<input type="text" class="form-control" id="txtPregunta3" name="txtPregunta3" placeholder="Pregunta #3" required>
+								<input type="text" class="form-control" id="txtRespuesta3" name="txtRespuesta3" placeholder="Respuesta #3" required>
+								<input type="date" class="form-control" id="txtFechaEncuesta" name="txtFechaEncuesta" required>
+								<input type="text" class="form-control" id="txtSemestre" name="txtSemestre" placeholder="Semestre" required>
+								<input type="submit" id="btnAltaEncuesta" name="btnAltaEncuesta" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="bajaEncuestas">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Baja de Encuestas</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmBajaEncuestas" name="frmBajaEncuestas">
+								<input type="password" class="form-control" id="txtClaveEncuestaBaja" name="txtClaveEncuestaBaja" placeholder="Clave de la Encuesta" required>
+								<input type="text" class="form-control" id="txtNombreEncuestaBaja" name="txtNombreEncuestaBaja" placeholder="Nombre de la Encuesta" required>
+								<input type="text" class="form-control" id="txtPregunta1Baja" name="txtPregunta1Baja" placeholder="Pregunta #1" disabled required>
+								<input type="text" class="form-control" id="txtRespuesta1Baja" name="txtRespuesta1Baja" placeholder="Respuesta #1" disabled required>
+								<input type="text" class="form-control" id="txtPregunta2Baja" name="txtPregunta2Baja" placeholder="Pregunta #2" disabled required>
+								<input type="text" class="form-control" id="txtRespuesta2Baja" name="txtRespuesta2Baja" placeholder="Respuesta #2" disabled required>
+								<input type="text" class="form-control" id="txtPregunta3Baja" name="txtPregunta3Baja" placeholder="Pregunta #3" disabled required>
+								<input type="text" class="form-control" id="txtRespuesta3Baja" name="txtRespuesta3Baja" placeholder="Respuesta #3" disabled required>
+								<input type="date" class="form-control" id="txtFechaEncuestaBaja" name="txtFechaEncuestaBaja" disabled required>
+								<input type="text" class="form-control" id="txtSemestreBaja" name="txtSemestreBaja" placeholder="Semestre" disabled required>
+								<input type="submit" id="btnBajaEncuesta" name="btnBajaEncuesta" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="consultaEncuestas">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Consulta de Encuestas</h2>
+					</article>
+						<article class="panel-body">
+							<table class="table table-striped" name="tablaConsultas" id="tablaConsultas">
+					
+							</table>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="actualizaEncuestas">
+				<article class="panel panel-danger">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Actualizar Encuestas</h2>
+					</article>
+						<article class="panel-body">
+							<form action="#" id="frmActualizaEncuestas" name="frmActualizaEncuestas">
+								<input type="password" class="form-control" id="txtClaveEncuestaActualiza" name="txtClaveEncuestaActualiza" placeholder="Clave de la Encuesta" required>
+								<input type="text" class="form-control" id="txtNombreEncuestaActualiza" name="txtNombreEncuestaActualiza" placeholder="Nombre de la Encuesta" required>
+								<input type="text" class="form-control" id="txtPregunta1Actualiza" name="txtPregunta1Actualiza" placeholder="Pregunta #1" required>
+								<input type="text" class="form-control" id="txtRespuesta1Actualiza" name="txtRespuesta1Actualiza" placeholder="Respuesta #1" required>
+								<input type="text" class="form-control" id="txtPregunta2Actualiza" name="txtPregunta2Actualiza" placeholder="Pregunta #2" required>
+								<input type="text" class="form-control" id="txtRespuesta2Actualiza" name="txtRespuesta2Actualiza" placeholder="Respuesta #2" required>
+								<input type="text" class="form-control" id="txtPregunta3Actualiza" name="txtPregunta3Actualiza" placeholder="Pregunta #3" required>
+								<input type="text" class="form-control" id="txtRespuesta3Actualiza" name="txtRespuesta3Actualiza" placeholder="Respuesta #3" required>
+								<input type="date" class="form-control" id="txtFechaEncuestaActualiza" name="txtFechaEncuestaActualiza" required>
+								<input type="text" class="form-control" id="txtSemestreActualiza" name="txtSemestreActualiza" placeholder="Semestre" required>
+								<input type="submit" id="btnActualizaEncuesta" name="btnActualizaEncuesta" class="btn btn-danger btn-lg btn-block">
+							</form>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+		<section>
+			<article id="inicio">
+				<article class="panel panel-info">
+					<article  class="panel-heading">
+						<h2 class="panel-title">Información</h2>
+					</article>
+						<article id="art0" class="panel-body">
+							<article id="art1">
+								<h3>Luis Fernando Ramirez Salazar</h3> 
+								<span>Alumno de la materia de Programación Web</span> <br>
+								<img src="img/luis.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/luisramirez.lfrs"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';"></button>
+								<button id="btnRedes" onclick=location="https://github.com/luisramirez1"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article> 
+							<article id="art2">
+								<h3>Martin Leonardo Nevarez Rivas</h3> 
+								<span>Maestro de la materia de Programación Web</span> <br>
+								<img src="img/nevarez.jpg" alt=""> <br>
+								<button id="btnRedes" onclick=location="https://www.facebook.com/martinevarezrivas"><img src="img/fgG.png" id="redesS" onmouseover="this.src='img/ftA.png';" onmouseout="this.src='img/fgG.png';">
+								</button>
+								<button id="btnRedes" onclick=location="https://github.com/martileos"><img src="img/gtG.png" id="redesS" onmouseover="this.src='img/gtA.png';" onmouseout="this.src='img/gtG.png';"></button>
+							</article>
+							<article id="art3">
+								<h3>Instituto Tecnológico de Culiacán</h3>
+								<img src="img/tec.png" alt="" id="logoTec">
+							</article>
+							<button id="flechaL" class="glyphicon glyphicon-chevron-left"></button>
+							<button id="flechaM" class="glyphicon glyphicon-option-horizontal"></button>
+							<button id="flechaR" class="glyphicon glyphicon-chevron-right"></button>
+						</article>
+					</article>
+				</article>
+			</article>
+		</section>
+	</main>
+	<footer></footer>
+</body>
+</html>
